@@ -1,8 +1,8 @@
-.delete-button {
+.download-button {
     padding: 10px;
     border: none;
     cursor: pointer;
-    background-color: rgb(225, 33, 33);
+    background-color: green;
     color: white;
     border-radius: 4px;
     margin-top: 10px;
@@ -10,14 +10,13 @@
     display: inline-block;
   }
   
-  .delete-button:hover {
-    background-color: #a30407; 
+  .download-button:hover {
+    background-color: #1ca51c; 
   }
   
-
-   .loading-spinner {
+  .loading-spinner {
     border: 4px solid #f3f3f3; /* Light grey */
-    border-top: 4px solid #007bff; /* Red */
+    border-top: 4px solid #dc3545; /* Red */
     border-radius: 50%;
     width: 20px;
     height: 20px;
@@ -28,4 +27,3 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   } 
-  

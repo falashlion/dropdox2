@@ -4,6 +4,7 @@ import { listFiles } from '../graphql/queries'; // Adjust the import path as nee
 import EditFile from './EditFile';
 import DeleteFile from './DeleteFile';
 import './FileList.css';
+import DownloadButton from './DownloadFile';
 const client = generateClient();
 
 const FileList = () => {
@@ -67,6 +68,7 @@ const FileList = () => {
                     Edit
                   </button>
                   <DeleteFile fileId={file.id} />
+                  <DownloadButton fileUrl={file.url} fileName={file.name}/> 
                 </div>
               </td>
             </tr>

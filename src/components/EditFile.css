@@ -44,6 +44,8 @@
   color: white;
   border-radius: 4px;
   margin-top: 10px;
+  font-size: 16px;
+  display: inline-block;
 }
 
 .input-label {
@@ -64,7 +66,7 @@
 }
 
 .input-file {
-  margin-top: 5px;
+  margin-top: 10px;
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 4px;

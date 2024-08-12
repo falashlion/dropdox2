@@ -3,6 +3,7 @@ import { generateClient } from 'aws-amplify/api';
 import { uploadData, remove} from 'aws-amplify/storage';
 import { updateFile } from '../graphql/mutations'; 
 import './EditFile.css';
+
 const client = generateClient();
 
 const EditFile = ({ file, onClose }) => {

@@ -46,6 +46,7 @@ tbody td {
   background-color: #007bff;
   color: white;
   border-radius: 4px;
+  margin-top: 10px;
 }
 
 .delete-button {
