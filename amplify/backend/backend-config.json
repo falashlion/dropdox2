@@ -1,15 +1,23 @@
 {
   "api": {
     "mydropbox": {
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "mydropboxcdf74d2c"
+        }
+      ],
       "output": {
         "authConfig": {
           "additionalAuthenticationProviders": [],
           "defaultAuthentication": {
-            "apiKeyConfig": {
-              "apiKeyExpirationDays": 7
-            },
-            "authenticationType": "API_KEY"
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authmydropboxcdf74d2c"
+            }
           }
         }
       },
@@ -45,15 +53,50 @@
       "service": "Cognito"
     }
   },
+  "function": {
+    "S3Triggerceb4f241": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
   "hosting": {
     "S3AndCloudFront": {
       "providerPlugin": "awscloudformation",
       "service": "S3AndCloudFront"
     }
   },
+  "parameters": {
+    "AMPLIFY_function_S3Triggerceb4f241_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "S3Triggerceb4f241"
+        }
+      ]
+    },
+    "AMPLIFY_function_S3Triggerceb4f241_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "S3Triggerceb4f241"
+        }
+      ]
+    }
+  },
   "storage": {
     "mydropboxstorage": {
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "LambdaExecutionRole"
+          ],
+          "category": "function",
+          "resourceName": "S3Triggerceb4f241"
+        }
+      ],
       "providerPlugin": "awscloudformation",
       "service": "S3"
     }
