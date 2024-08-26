@@ -8,6 +8,13 @@
       "cognitoUserPoolId": "authmydropboxcdf74d2c"
     },
     "conflictResolution": {},
-    "additionalAuthTypes": []
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 364,
+        "apiKeyExpirationDate": "2025-08-25T07:58:39.976Z",
+        "keyDescription": "mydropboxtest"
+      }
+    ]
   }
 }

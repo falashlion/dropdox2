@@ -40,8 +40,8 @@ const App =
              <img src={logo} className='logo' alt="dropbox-logo" />
               <h2 className="welcome" >Dropbox</h2>
               <h3 className="info">UPLOAD AND MANAGE FILES </h3>
-              <FileUpload />
-              <FileList />
+              <FileUpload user={user} />
+              <FileList user={user.username} />
             </div>
             </>
           );

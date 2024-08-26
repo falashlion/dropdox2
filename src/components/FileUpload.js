@@ -5,14 +5,14 @@ import { uploadData, getUrl} from 'aws-amplify/storage';
 import './FileUpload.css';
 const client = generateClient();
 
-const FileUpload = () => {
+const FileUpload = (user) => {
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const handleChange = (event) => {
     setFile(event.target.files[0]);
   };
-
+ console.log(user);
   const handleUpload = async () => {
     if (file) {
       setLoading(true);
@@ -21,7 +21,7 @@ const FileUpload = () => {
             name: file.name,
             description: '', 
             url: '',
-            owner: '', 
+            owner: user.name, 
             version: 1, 
           };
 

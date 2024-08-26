@@ -7,7 +7,7 @@ import './FileList.css';
 import DownloadButton from './DownloadFile';
 const client = generateClient();
 
-const FileList = () => {
+const FileList = (user) => {
   const [files, setFiles] = useState([]);
   const [editingFile, setEditingFile] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -21,7 +21,11 @@ const FileList = () => {
           variables: { limit: 10 },
         })
         const fileList = fileData.data.listFiles.items;
-        setFiles(fileList);
+  
+         // Filter files based on the owner
+         const userFiles = fileList.filter(file => file.owner === user.user );
+         setFiles(userFiles);
+      
       } catch (error) {
         console.log('Error fetching files:', error);
       }

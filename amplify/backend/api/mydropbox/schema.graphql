@@ -2,7 +2,12 @@
 # all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
 input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
 
-type File @model {
+type File @model
+@auth(rules: [
+  { allow: owner },
+  { allow: groups, groups: ["Admins"] },
+  { allow: private, operations: [create, update, delete, read] }
+]) {
   id: ID!
   name: String!
   description: String
@@ -12,4 +17,5 @@ type File @model {
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
 }
+
 
