@@ -33,10 +33,9 @@ const DownloadButton = ({ fileUrl, fileName }) => {
   }
   };
 
+  handleDownload();
   return (
-    <button className="download-button" onClick={handleDownload} disabled={loading}>
-    {loading ? 'Downloading...' : 'Download'} 
-    </button>
+    null
   );
 };
 

@@ -35,8 +35,6 @@ const DeleteFile = ({ fileId }) => {
         variables: { input: { id: fileId } },
       });
 
-      // // If the record has no associated file, we can return early.
-      // if (!filers?.url) return;
       await remove({ key: fileKey }); 
 
       alert('File deleted successfully');
@@ -49,10 +47,9 @@ const DeleteFile = ({ fileId }) => {
     }
   };
 
+  handleDelete();
   return (
-    <button onClick={handleDelete} className="delete-button" disabled={loading}>
-      {loading ? 'Deleting...' : 'Delete'}
-    </button>
+    null
   );
 };
 

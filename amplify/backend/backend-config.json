@@ -1,32 +1,15 @@
 {
   "api": {
     "mydropbox": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "UserPoolId"
-          ],
-          "category": "auth",
-          "resourceName": "mydropboxcdf74d2c"
-        }
-      ],
+      "dependsOn": [],
       "output": {
         "authConfig": {
-          "additionalAuthenticationProviders": [
-            {
-              "apiKeyConfig": {
-                "apiKeyExpirationDate": "2025-08-25T07:58:39.976Z",
-                "apiKeyExpirationDays": 364,
-                "description": "mydropboxtest"
-              },
-              "authenticationType": "API_KEY"
-            }
-          ],
+          "additionalAuthenticationProviders": [],
           "defaultAuthentication": {
-            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-            "userPoolConfig": {
-              "userPoolId": "authmydropboxcdf74d2c"
-            }
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            },
+            "authenticationType": "API_KEY"
           }
         }
       },
@@ -35,7 +18,7 @@
     }
   },
   "auth": {
-    "mydropboxcdf74d2c": {
+    "mydropboxc0c8e217": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
@@ -48,12 +31,12 @@
           "passwordPolicyMinLength": 8
         },
         "signupAttributes": [
-          "EMAIL"
+          "EMAIL",
+          "NAME",
+          "PHONE_NUMBER"
         ],
         "socialProviders": [],
-        "usernameAttributes": [
-          "EMAIL"
-        ],
+        "usernameAttributes": [],
         "verificationMechanisms": [
           "EMAIL"
         ]
@@ -63,38 +46,32 @@
     }
   },
   "function": {
-    "S3Triggerceb4f241": {
+    "S3Triggerfc47b0da": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
   },
-  "hosting": {
-    "S3AndCloudFront": {
-      "providerPlugin": "awscloudformation",
-      "service": "S3AndCloudFront"
-    }
-  },
   "parameters": {
-    "AMPLIFY_function_S3Triggerceb4f241_deploymentBucketName": {
+    "AMPLIFY_function_S3Triggerfc47b0da_deploymentBucketName": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "S3Triggerceb4f241"
+          "resourceName": "S3Triggerfc47b0da"
         }
       ]
     },
-    "AMPLIFY_function_S3Triggerceb4f241_s3Key": {
+    "AMPLIFY_function_S3Triggerfc47b0da_s3Key": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "S3Triggerceb4f241"
+          "resourceName": "S3Triggerfc47b0da"
         }
       ]
     }
   },
   "storage": {
-    "mydropboxstorage": {
+    "dropboxstorage": {
       "dependsOn": [
         {
           "attributes": [
@@ -103,7 +80,7 @@
             "LambdaExecutionRole"
           ],
           "category": "function",
-          "resourceName": "S3Triggerceb4f241"
+          "resourceName": "S3Triggerfc47b0da"
         }
       ],
       "providerPlugin": "awscloudformation",

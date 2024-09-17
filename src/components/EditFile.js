@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, version } from 'react';
 import { generateClient } from 'aws-amplify/api';
 import { uploadData, remove} from 'aws-amplify/storage';
 import { updateFile } from '../graphql/mutations'; 
@@ -9,6 +9,7 @@ const client = generateClient();
 const EditFile = ({ file, onClose }) => {
   const [name, setName] = useState(file.name);
   const [description, setDescription] = useState(file.description);
+  const [version, setVersion] = useState(file.version);
   const [loading, setLoading] = useState(false);
   const [fileUpdate, setFileUpdate] = useState(null);
 
@@ -50,6 +51,7 @@ const EditFile = ({ file, onClose }) => {
             id: file.id,
             name,
             description,
+            version
           },
         },
       });
@@ -86,6 +88,15 @@ const EditFile = ({ file, onClose }) => {
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
+          />
+        </label>
+        <label class="input-label">
+          Version:
+          <input
+            type="text"
+            class="input-text"
+            value={version}
+            onChange={(e) => setVersion(e.target.value)}
           />
         </label>
         <button onClick={handleUpdate} disabled={loading}>

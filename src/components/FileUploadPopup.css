@@ -1,0 +1,156 @@
+/* FileUploadPopup.css */
+
+.file-upload-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .file-upload-container.overlay-active::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Light grey overlay with some transparency */
+    z-index: -1;
+  }
+  
+  .open-popup-btn {
+    background-color: #007ad9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .open-popup-btn:hover {
+    background-color: #005ea6;
+  }
+  
+  .file-upload-popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .file-drop-area {
+    width: 100%;
+    border: 2px dashed #bbb;
+    padding: 40px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  .file-drop-area:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .file-drop-area p {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .file-upload-button {
+    display: inline-block;
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #555;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .file-upload-button:hover {
+    background-color: #ddd;
+  }
+  
+  .file-upload-button input[type="file"] {
+    display: none;
+  }
+  
+  .file-list {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .file-list p {
+    padding: 5px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    margin-bottom: 5px;
+  }
+  
+  .popup-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .upload-btn, .cancel-btn {
+    background-color: #007ad9;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .upload-btn:hover, .cancel-btn:hover {
+    background-color: #005ea6;
+  }
+  
+  .cancel-btn {
+    background-color: #f44336;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #d32004e8;
+  }
+  
+  /* FileUploadPopup.css */
+
+.file-upload-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Light grey overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.file-upload-popup {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.selected-files-list {
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.selected-files-list div {
+  display: flex;
+  justify-content: space-between;
+}

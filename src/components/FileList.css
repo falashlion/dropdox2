@@ -6,9 +6,12 @@
 }
 
 table {
+  margin: auto;
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  border-radius: 25px;
+  border-color: #007bff;
 }
 
 thead th {
@@ -16,6 +19,7 @@ thead th {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ddd;
+  
 }
 
 tbody td {
@@ -29,7 +33,7 @@ tbody td {
 }
 
 .file-link:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .button-group {
@@ -43,16 +47,20 @@ tbody td {
   padding: 5px 10px;
   border: none;
   cursor: pointer;
-  background-color: #007bff;
+  background-color: #979797;
   color: white;
-  border-radius: 4px;
+  border-radius: 24px;
   margin-top: 10px;
 }
 
 .delete-button {
-  background-color: #dc3545;
+  background-color: #979797;
+  
 }
 
+.edit-button:hover{
+  background-color: #00A7FA ;
+}
 .edit-button:hover,
 .delete-button:hover {
   opacity: 0.8;
@@ -72,4 +80,17 @@ tbody td {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.file-list-container {
+  display: flex;
+}
+
+.navbar {
+  width: 20%; 
+}
+
+.file-list {
+  flex-grow: 1;
+  padding: 20px;
 }

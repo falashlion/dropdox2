@@ -7,9 +7,10 @@ export type AmplifyDependentResourcesAttributes = {
     }
   },
   "auth": {
-    "mydropboxcdf74d2c": {
+    "mydropboxc0c8e217": {
       "AppClientID": "string",
       "AppClientIDWeb": "string",
+      "CreatedSNSRole": "string",
       "IdentityPoolId": "string",
       "IdentityPoolName": "string",
       "UserPoolArn": "string",
@@ -18,7 +19,7 @@ export type AmplifyDependentResourcesAttributes = {
     }
   },
   "function": {
-    "S3Triggerceb4f241": {
+    "S3Triggerfc47b0da": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
       "LambdaExecutionRoleArn": "string",
@@ -26,20 +27,8 @@ export type AmplifyDependentResourcesAttributes = {
       "Region": "string"
     }
   },
-  "hosting": {
-    "S3AndCloudFront": {
-      "CloudFrontDistributionID": "string",
-      "CloudFrontDomainName": "string",
-      "CloudFrontOriginAccessIdentity": "string",
-      "CloudFrontSecureURL": "string",
-      "HostingBucketName": "string",
-      "Region": "string",
-      "S3BucketSecureURL": "string",
-      "WebsiteURL": "string"
-    }
-  },
   "storage": {
-    "mydropboxstorage": {
+    "dropboxstorage": {
       "BucketName": "string",
       "Region": "string"
     }

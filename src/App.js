@@ -4,10 +4,18 @@ import { withAuthenticator, ThemeProvider, createTheme, View, Image, Heading } f
 import '@aws-amplify/ui-react/styles.css';
 import config from './amplifyconfiguration.json';
 import logo from './assets/images/dropbox-logo.png'
-
+import * as ReactDOM from "react-dom/client";
+import NotFoundPage from './components/NotFoundPage';
+import FileUploadComponent from "./components/FileUploadPopup";
+import {
+  Route, createBrowserRouter, createRoutesFromElements, RouterProvider, Navigate
+} from "react-router-dom";
 import FileUpload from './components/FileUpload';
-import FileList from './components/FileList';
+import FilesList from './components/FilesList';
+import Folders from './components/Folders';
 import './App.css';
+import HomePage from './pages/HomePage';
+import UserProfile from './pages/UserProfile';
 Amplify.configure(config);
 
 const theme = createTheme({
@@ -31,19 +39,28 @@ const theme = createTheme({
   },
 });
 
+
 const App = 
           ({ signOut, user }) => {
+            const router = createBrowserRouter(
+              createRoutesFromElements(
+                <>
+                <Route path='/' element={<HomePage signOut={signOut} user={user}/>}/>
+                <Route path='/upload' element={<FileUpload user={user}/>}/>
+                <Route path='/files' element={<FilesList user={user.username} signOut={signOut}  />}/>
+                <Route path='/folders' element={<Folders user={user}/>}/> 
+                <Route path='/user' element={<UserProfile signOut={signOut} user={user}/>}/>
+                <Route path='/folderp' element={<FileUploadComponent/>}/>
+
+                <Route path="*" element={<NotFoundPage />} />
+                </>
+              ));
             return (
-              <>
-            <div>
-              <button className="signout-button" onClick={signOut}>Sign out</button>
-             <img src={logo} className='logo' alt="dropbox-logo" />
-              <h2 className="welcome" >Dropbox</h2>
-              <h3 className="info">UPLOAD AND MANAGE FILES </h3>
-              <FileUpload user={user} />
-              <FileList user={user.username} />
-            </div>
-            </>
+            <RouterProvider
+              router={router}
+              // onNavigate={(location) => handleNavigation(location.pathname)}
+            />
+            
           );
         };
           

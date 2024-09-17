@@ -1,0 +1,375 @@
+.profile-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+    padding: 2vw;
+  }
+  
+  .profile-container {
+    width: 100%;
+    max-width: 80%;
+    position: relative;
+    border: 1px solid #dedede;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    height: 800px;
+  }
+
+  @media (min-width: 768px) {
+    .profile-wrapper {
+      padding: 3vw; 
+    }
+  }
+  
+  @media (min-width: 1021px) and (max-width: 2000px) {
+    .profile-wrapper {
+      padding: 5vw; 
+    }
+  }
+  
+  .overlay {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+  
+  .cover-photo {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+  }
+  
+  .edit-cover-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 4;
+  }
+  
+  .profile-details {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  .profile-info {
+    margin-left: 20px;
+  }
+  
+  .profile-info h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .user-details p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 16px;
+  }
+  
+  .dropdown {
+    position: relative;
+    margin-left: auto;
+  }
+  
+  .dropdown-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    list-style: none;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    border-radius: 5px;
+  }
+  
+  .dropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .dropdown-menu li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding: 10px 0;
+    border-top: 1px solid #eaeaea;
+  }
+  
+  .tab {
+    padding: 10px;
+    cursor: pointer;
+    color: #888;
+    position: relative;
+  }
+  
+  .active {
+    color: #6c63ff;
+    font-weight: bold;
+  }
+  
+  .underline {
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+    height: 3px;
+    background-color: #6c63ff;
+    transition: left 0.3s ease;
+  }
+  
+  .image-preview {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .preview-content {
+    position: relative;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 1200px) {
+    /* For large screens, like desktops */
+    .preview-content {
+      padding: 30px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    /* For medium screens, like tablets */
+    .preview-content {
+      padding: 25px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    /* For small screens, like phones */
+    .preview-content {
+      padding: 35px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    /* For extra small screens */
+    .preview-content {
+      padding: 30px;
+    }
+  }
+  
+  .preview-content img {
+    max-width: 400px;
+    max-height: 400px;
+    object-fit: cover;
+  }
+
+  .change-preview-btn{
+    left: 5px;
+    /* right: 5px; */
+    background: green;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+
+  .change-preview-btn:hover{
+    background: #3EA055;
+  }
+
+  .close-preview-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+  
+  .close-preview-btn:hover {
+    background: #b30000;
+  }
+  
+  .edit-profile-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .edit-profile-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+  }
+  
+  .edit-profile-content h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .edit-profile-content form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .edit-profile-content label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .edit-profile-content input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+  }
+  
+  .edit-profile-content button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #6c63ff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+  }
+  
+  .edit-profile-content button:hover {
+    background-color: #5847d8;
+  }
+  
+  .edit-profile-content .cancel-btn {
+    background-color: #f44336;
+  }
+  
+  .edit-profile-content .cancel-btn:hover {
+    background-color: #d32f2f;
+  }
+  
+
+  profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .upload-label {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .upload-btn {
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    padding: 4px 8px;
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .upload-btn:hover {
+    background-color: #5847d8;
+  }
+  
+  .hidden-input {
+    display: none;
+  }

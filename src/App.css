@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .App {
   text-align: center;
 }
@@ -63,7 +67,7 @@
 }
 
 .logo {
-  width: 100px;
+  width: 50px;
   height: auto;
   /* margin: 15px; */
   margin-top: 15px;
@@ -77,6 +81,6 @@
 }
 
 .login-logo{
-  width: 200px;
-  height: 200px;
+  width: 60px;
+  height: auto;
 }

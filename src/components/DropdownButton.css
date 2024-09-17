@@ -1,0 +1,53 @@
+.dropdown-button {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-toggle {
+    background-color: #979797;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 25px;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    z-index: 1000;
+    padding: 10px;
+  }
+  
+  .dropdown-link {
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .copy-button {
+    background: none;
+    border: none;
+    color: #0065d9;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 12px;
+  }
+  
+  .copy-feedback {
+    color: green;
+    margin-left: 10px;
+  }
+  
+  .dropdown-details {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+  }
+  
