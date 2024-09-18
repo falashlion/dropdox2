@@ -114,8 +114,13 @@ const HomePage = ({user, signOut}) => {
                 <div class='flex items-center justify-center space-x-4'>
                 
                 <img class='w-10 h-10 rounded-full' 
-                src={isUserData.avatar || 'https://pagedone.io/asset/uploads/1704275541.png' }
-                alt='Media rounded avatar' />
+                src={isUserData?.avatar || 'https://pagedone.io/asset/uploads/1704275541.png'}
+                alt="Media rounded avatar"
+                onError={(e) => {
+                  e.target.onerror = null; 
+                  e.target.src = 'https://pagedone.io/asset/uploads/1704275541.png'; 
+                }}
+                 />
                 
                 <div class='font-medium'>
                 </div>

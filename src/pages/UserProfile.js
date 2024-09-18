@@ -296,8 +296,8 @@ const handleGetUser = async () => {
             <div className="profile-photo">
                 <img
                   src={
-                    isUserData.avatar ||
-                    "https://randomuser.me/api/portraits/men/41.jpg"
+                    isUserData?.avatar ||
+                    "https://pagedone.io/asset/uploads/1704275541.png"
                   }
                   alt="profile"
                 />
